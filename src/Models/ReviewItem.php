@@ -38,6 +38,7 @@ class ReviewItem extends DataObject
 
     private static $owns = [
         'Image',
+        'Categories',
     ];
 
     // private static $belongs_to = [];
