@@ -1,3 +1,7 @@
 ---
 Name: goldfinch-component-reviews
 ---
+
+Goldfinch\Component\Reviews\Admin\ReviewsAdmin:
+  extensions:
+    - Goldfinch\Helpers\Extensions\BlocksAdminExtension
