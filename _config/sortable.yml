@@ -1,0 +1,11 @@
+---
+Name: goldfinch-component-reviews-sortable
+---
+
+Goldfinch\Component\Reviews\Models\ReviewItem:
+  extensions:
+    - Goldfinch\Helpers\Extensions\DataObjectSortable
+
+Goldfinch\Component\Reviews\Models\ReviewCategory:
+  extensions:
+    - Goldfinch\Helpers\Extensions\DataObjectSortable
