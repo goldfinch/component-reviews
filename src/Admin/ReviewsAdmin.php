@@ -16,7 +16,7 @@ class ReviewsAdmin extends ModelAdmin
 
     private static $url_segment = 'reviews';
     private static $menu_title = 'Reviews';
-    private static $menu_icon_class = 'bi-chat-square-quote-fill';
+    private static $menu_icon_class = 'font-icon-chat';
     // private static $menu_priority = -0.5;
 
     private static $managed_models = [
