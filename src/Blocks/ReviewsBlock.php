@@ -21,7 +21,7 @@ class ReviewsBlock extends BaseElement
 
     private static $inline_editable = false;
     private static $description = '';
-    private static $icon = 'bi-chat-square-quote-fill';
+    private static $icon = 'font-icon-chat';
     // private static $disable_pretty_anchor_name = false;
     // private static $displays_title_in_template = true;
 
