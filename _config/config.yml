@@ -14,3 +14,8 @@ Only:
 
 Goldfinch\Component\Reviews\Admin\ReviewsAdmin:
   menu_icon_class: 'bi-chat-square-quote-fill'
+
+Goldfinch\Component\Reviews\Admin\Blocks\ReviewsBlock:
+  icon: 'bi-chat-square-quote-fill'
+
+
