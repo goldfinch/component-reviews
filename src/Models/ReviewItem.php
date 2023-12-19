@@ -96,6 +96,8 @@ class ReviewItem extends DataObject
             ]
         );
 
+        $fields->dataFieldByName('Image')->setFolderName('reviews');
+
         return $fields;
     }
 
