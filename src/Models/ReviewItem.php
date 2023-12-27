@@ -9,7 +9,7 @@ use SilverStripe\Forms\TextField;
 use SilverStripe\TagField\TagField;
 use SilverStripe\Forms\CheckboxField;
 use SilverStripe\Forms\HTMLEditor\HTMLEditorField;
-use Goldfinch\FocusPointExtra\Forms\UploadFieldWithExtra;
+use Goldfinch\ImageEditor\Forms\EditableUploadField;
 
 class ReviewItem extends DataObject
 {
@@ -87,7 +87,7 @@ class ReviewItem extends DataObject
                 ...[
                     TextField::create('Author', 'Author'),
                 ],
-                ...UploadFieldWithExtra::create('Image', 'Image', $fields, $this)->getFields(),
+                ...EditableUploadField::create('Image', 'Image', $fields, $this)->getFields(),
                 ...[
                     HTMLEditorField::create('Text', 'Text'),
                     TagField::create('Categories', 'Categories', ReviewCategory::get()),
