@@ -1,0 +1,19 @@
+---
+Name: app-{{ class }}
+After: "goldfinch/component-reviews"
+---
+Goldfinch\Component\Reviews\Models\Nest\ReviewItem:
+  extensions:
+    - {{ namespace }}\ReviewItemExtension
+
+Goldfinch\Component\Reviews\Models\Nest\ReviewCategory:
+  extensions:
+    - {{ namespace }}\ReviewCategoryExtension
+
+Goldfinch\Component\Reviews\Configs\ReviewConfig:
+  extensions:
+    - {{ namespace }}\ReviewConfigExtension
+
+Goldfinch\Component\Reviews\Blocks\ReviewsBlock:
+  extensions:
+    - {{ namespace }}\ReviewsBlockExtension
