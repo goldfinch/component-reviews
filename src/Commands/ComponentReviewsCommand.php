@@ -16,34 +16,34 @@ class ComponentReviewsCommand extends GeneratorCommand
     protected function execute($input, $output): int
     {
         $command = $this->getApplication()->find(
-            'vendor:component-reviews-reviewitem',
+            'vendor:component-reviews:reviewitem',
         );
         $input = new ArrayInput(['name' => 'ReviewItem']);
         $command->run($input, $output);
 
         $command = $this->getApplication()->find(
-            'vendor:component-reviews-reviewcategory',
+            'vendor:component-reviews:reviewcategory',
         );
         $input = new ArrayInput(['name' => 'ReviewCategory']);
         $command->run($input, $output);
 
         $command = $this->getApplication()->find(
-            'vendor:component-reviews-reviewconfig',
+            'vendor:component-reviews:reviewconfig',
         );
         $input = new ArrayInput(['name' => 'ReviewConfig']);
         $command->run($input, $output);
 
         $command = $this->getApplication()->find(
-            'vendor:component-reviews-reviewsblock',
+            'vendor:component-reviews:reviewsblock',
         );
         $input = new ArrayInput(['name' => 'ReviewsBlock']);
         $command->run($input, $output);
 
-        $command = $this->getApplication()->find('templates:component-reviews');
+        $command = $this->getApplication()->find('vendor:component-reviews:templates');
         $input = new ArrayInput([]);
         $command->run($input, $output);
 
-        $command = $this->getApplication()->find('config:component-reviews');
+        $command = $this->getApplication()->find('vendor:component-reviews:config');
         $input = new ArrayInput(['name' => 'component-reviews']);
         $command->run($input, $output);
 

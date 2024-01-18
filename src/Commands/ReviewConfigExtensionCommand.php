@@ -5,10 +5,10 @@ namespace Goldfinch\Component\Reviews\Commands;
 use Goldfinch\Taz\Console\GeneratorCommand;
 use Symfony\Component\Console\Command\Command;
 
-#[AsCommand(name: 'vendor:component-reviews-reviewconfig')]
+#[AsCommand(name: 'vendor:component-reviews:reviewconfig')]
 class ReviewConfigExtensionCommand extends GeneratorCommand
 {
-    protected static $defaultName = 'vendor:component-reviews-reviewconfig';
+    protected static $defaultName = 'vendor:component-reviews:reviewconfig';
 
     protected $description = 'Create ReviewConfig extension';
 
