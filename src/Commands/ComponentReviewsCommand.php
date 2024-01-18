@@ -39,9 +39,7 @@ class ComponentReviewsCommand extends GeneratorCommand
         $input = new ArrayInput(['name' => 'ReviewsBlock']);
         $command->run($input, $output);
 
-        $command = $this->getApplication()->find(
-            'templates:component-reviews',
-        );
+        $command = $this->getApplication()->find('templates:component-reviews');
         $input = new ArrayInput([]);
         $command->run($input, $output);
 

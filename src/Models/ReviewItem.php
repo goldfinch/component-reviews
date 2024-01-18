@@ -30,10 +30,7 @@ class ReviewItem extends DataObject
         'Image' => Image::class,
     ];
 
-    private static $owns = [
-        'Image',
-        'Categories',
-    ];
+    private static $owns = ['Image', 'Categories'];
 
     private static $summary_fields = [
         'Author' => 'Author',
@@ -51,7 +48,9 @@ class ReviewItem extends DataObject
                 ...$harvest->media('Image'),
                 $harvest->html('Text'),
                 $harvest->tag('Categories'),
-                $harvest->checkbox('Disabled')->setDescription('hide this item from the list'),
+                $harvest
+                    ->checkbox('Disabled')
+                    ->setDescription('hide this item from the list'),
             ],
         ]);
 

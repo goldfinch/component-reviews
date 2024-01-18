@@ -20,16 +20,16 @@ class ReviewsAdmin extends ModelAdmin
 
     private static $managed_models = [
         ReviewItem::class => [
-            'title'=> 'Reviews',
+            'title' => 'Reviews',
         ],
         ReviewCategory::class => [
-            'title'=> 'Categories',
+            'title' => 'Categories',
         ],
         ReviewsBlock::class => [
-            'title'=> 'Blocks',
+            'title' => 'Blocks',
         ],
         ReviewConfig::class => [
-            'title'=> 'Settings',
+            'title' => 'Settings',
         ],
     ];
 }
