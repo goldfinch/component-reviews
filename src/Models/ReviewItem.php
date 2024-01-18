@@ -38,7 +38,7 @@ class ReviewItem extends DataObject
         'Disabled.NiceAsBoolean' => 'Disabled',
     ];
 
-    public function harvest(Harvest $harvest)
+    public function harvest(Harvest $harvest): void
     {
         $harvest->require(['Author', 'Text']);
 
