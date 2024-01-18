@@ -4,16 +4,16 @@ After: "goldfinch/component-reviews"
 ---
 Goldfinch\Component\Reviews\Models\Nest\ReviewItem:
   extensions:
-    - {{ namespace_root }}ReviewItemExtension
+    - {{ namespace_root_extensions }}ReviewItemExtension
 
 Goldfinch\Component\Reviews\Models\Nest\ReviewCategory:
   extensions:
-    - {{ namespace_root }}ReviewCategoryExtension
+    - {{ namespace_root_extensions }}ReviewCategoryExtension
 
 Goldfinch\Component\Reviews\Configs\ReviewConfig:
   extensions:
-    - {{ namespace_root }}ReviewConfigExtension
+    - {{ namespace_root_extensions }}ReviewConfigExtension
 
 Goldfinch\Component\Reviews\Blocks\ReviewsBlock:
   extensions:
-    - {{ namespace_root }}ReviewsBlockExtension
+    - {{ namespace_root_extensions }}ReviewsBlockExtension
