@@ -76,21 +76,5 @@ class ComponentReviewsTemplatesCommand extends GeneratorCommand
                 $theme .
                 '/templates/Goldfinch/Component/Reviews/Blocks/ReviewsBlock.ss',
         );
-
-        $fs->copy(
-            BASE_PATH .
-                '/vendor/goldfinch/component-reviews/templates/Goldfinch/Component/Reviews/Models/Nest/ReviewItem.ss',
-            'themes/' .
-                $theme .
-                '/templates/Goldfinch/Component/Reviews/Models/Nest/ReviewItem.ss',
-        );
-
-        $fs->copy(
-            BASE_PATH .
-                '/vendor/goldfinch/component-reviews/templates/Goldfinch/Component/Reviews/Pages/Nest/Reviews.ss',
-            'themes/' .
-                $theme .
-                '/templates/Goldfinch/Component/Reviews/Pages/Nest/Reviews.ss',
-        );
     }
 }
