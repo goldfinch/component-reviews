@@ -2,11 +2,11 @@
 Name: app-{{ class }}
 After: "goldfinch/component-reviews"
 ---
-Goldfinch\Component\Reviews\Models\Nest\ReviewItem:
+Goldfinch\Component\Reviews\Models\ReviewItem:
   extensions:
     - {{ namespace_root_extensions }}ReviewItemExtension
 
-Goldfinch\Component\Reviews\Models\Nest\ReviewCategory:
+Goldfinch\Component\Reviews\Models\ReviewCategory:
   extensions:
     - {{ namespace_root_extensions }}ReviewCategoryExtension
 

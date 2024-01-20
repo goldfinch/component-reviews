@@ -2,8 +2,10 @@
 
 namespace Goldfinch\Component\Reviews\Models;
 
+use Goldfinch\Harvest\Harvest;
 use SilverStripe\Assets\Image;
 use SilverStripe\ORM\DataObject;
+use Goldfinch\Component\Reviews\Configs\ReviewConfig;
 
 class ReviewItem extends DataObject
 {
@@ -55,5 +57,11 @@ class ReviewItem extends DataObject
         ]);
 
         $harvest->dataField('Image')->setFolderName('reviews');
+
+        $cfg = ReviewConfig::current_config();
+
+        if ($cfg->DisabledCategories) {
+            $harvest->remove('Categories');
+        }
     }
 }

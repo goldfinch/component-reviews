@@ -32,4 +32,25 @@ class ReviewsAdmin extends ModelAdmin
             'title' => 'Settings',
         ],
     ];
+
+    public function getManagedModels()
+    {
+        $models = parent::getManagedModels();
+
+        $cfg = ReviewConfig::current_config();
+
+        if ($cfg->DisabledCategories) {
+            unset($models[ReviewCategory::class]);
+        }
+
+        if (!class_exists('DNADesign\Elemental\Models\BaseElement')) {
+            unset($models[ReviewsBlock::class]);
+        }
+
+        if (empty($cfg->config('db')->db)) {
+            unset($models[ReviewConfig::class]);
+        }
+
+        return $models;
+    }
 }
