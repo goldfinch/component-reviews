@@ -5,18 +5,18 @@ namespace Goldfinch\Component\Reviews\Commands;
 use Goldfinch\Taz\Console\GeneratorCommand;
 use Symfony\Component\Console\Command\Command;
 
-#[AsCommand(name: 'vendor:component-reviews:ext:item')]
-class ReviewItemExtensionCommand extends GeneratorCommand
+#[AsCommand(name: 'vendor:component-reviews:ext:admin')]
+class ReviewsAdminExtensionCommand extends GeneratorCommand
 {
-    protected static $defaultName = 'vendor:component-reviews:ext:item';
+    protected static $defaultName = 'vendor:component-reviews:ext:admin';
 
-    protected $description = 'Create ReviewItem extension';
+    protected $description = 'Create ReviewsAdmin extension';
 
     protected $path = '[psr4]/Extensions';
 
-    protected $type = 'component-reviews item extension';
+    protected $type = 'extension';
 
-    protected $stub = './stubs/reviewitem-extension.stub';
+    protected $stub = './stubs/reviewsadmin-extension.stub';
 
     protected $prefix = 'Extension';
 

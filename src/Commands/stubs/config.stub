@@ -1,0 +1,25 @@
+---
+Name: app-{{ class }}
+After: "goldfinch/component-reviews"
+---
+Goldfinch\Component\Reviews\Admin\ReviewsAdmin:
+  # menu_icon_class: ""
+  extensions:
+    - {{ namespace_root_extensions }}ReviewsAdminExtension
+
+Goldfinch\Component\Reviews\Configs\ReviewConfig:
+  extensions:
+    - {{ namespace_root_extensions }}ReviewConfigExtension
+
+Goldfinch\Component\Reviews\Blocks\ReviewsBlock:
+  # icon: ""
+  extensions:
+    - {{ namespace_root_extensions }}ReviewsBlockExtension
+
+Goldfinch\Component\Reviews\Models\ReviewItem:
+  extensions:
+    - {{ namespace_root_extensions }}ReviewItemExtension
+
+Goldfinch\Component\Reviews\Models\ReviewCategory:
+  extensions:
+    - {{ namespace_root_extensions }}ReviewCategoryExtension

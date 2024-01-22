@@ -6,17 +6,17 @@ use Goldfinch\Taz\Console\GeneratorCommand;
 use Symfony\Component\Console\Command\Command;
 
 #[AsCommand(name: 'vendor:component-reviews:config')]
-class ComponentReviewsConfigCommand extends GeneratorCommand
+class ReviewsConfigCommand extends GeneratorCommand
 {
     protected static $defaultName = 'vendor:component-reviews:config';
 
-    protected $description = 'Create component-reviews config';
+    protected $description = 'Create Reviews YML config';
 
     protected $path = 'app/_config';
 
-    protected $type = 'component-reviews yml config';
+    protected $type = 'config';
 
-    protected $stub = 'reviewconfig.stub';
+    protected $stub = './stubs/config.stub';
 
     protected $extension = '.yml';
 
