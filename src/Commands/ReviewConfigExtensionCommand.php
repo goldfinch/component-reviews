@@ -14,7 +14,7 @@ class ReviewConfigExtensionCommand extends GeneratorCommand
 
     protected $path = '[psr4]/Extensions';
 
-    protected $type = 'component-reviews config extension';
+    protected $type = 'extension';
 
     protected $stub = './stubs/reviewconfig-extension.stub';
 
