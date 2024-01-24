@@ -2,7 +2,7 @@
 
 namespace Goldfinch\Component\Reviews\Models;
 
-use Goldfinch\Harvest\Harvest;
+use Goldfinch\Fielder\Fielder;
 use SilverStripe\Assets\Image;
 use SilverStripe\ORM\DataObject;
 use Goldfinch\Component\Reviews\Configs\ReviewConfig;
@@ -40,28 +40,28 @@ class ReviewItem extends DataObject
         'Disabled.NiceAsBoolean' => 'Disabled',
     ];
 
-    public function harvest(Harvest $harvest): void
+    public function fielder(Fielder $fielder): void
     {
-        $harvest->require(['Author', 'Text']);
+        $fielder->require(['Author', 'Text']);
 
-        $harvest->fields([
+        $fielder->fields([
             'Root.Main' => [
-                $harvest->string('Author'),
-                ...$harvest->media('Image'),
-                $harvest->html('Text'),
-                $harvest->tag('Categories'),
-                $harvest
+                $fielder->string('Author'),
+                ...$fielder->media('Image'),
+                $fielder->html('Text'),
+                $fielder->tag('Categories'),
+                $fielder
                     ->checkbox('Disabled')
                     ->setDescription('hide this item from the list'),
             ],
         ]);
 
-        $harvest->dataField('Image')->setFolderName('reviews');
+        $fielder->dataField('Image')->setFolderName('reviews');
 
         $cfg = ReviewConfig::current_config();
 
         if ($cfg->DisabledCategories) {
-            $harvest->remove('Categories');
+            $fielder->remove('Categories');
         }
     }
 }
