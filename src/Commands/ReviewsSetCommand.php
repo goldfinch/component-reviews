@@ -13,6 +13,8 @@ class ReviewsSetCommand extends GeneratorCommand
 
     protected $description = 'Set of all [goldfinch/component-reviews] commands';
 
+    protected $no_arguments = true;
+
     protected function execute($input, $output): int
     {
         $command = $this->getApplication()->find(
