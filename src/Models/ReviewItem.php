@@ -15,7 +15,7 @@ class ReviewItem extends DataObject
 
     private static $db = [
         'Text' => 'HTMLText',
-        'Author' => 'Varchar',
+        'Publisher' => 'Varchar',
         'Disabled' => 'Boolean',
     ];
 
@@ -35,18 +35,18 @@ class ReviewItem extends DataObject
     private static $owns = ['Image', 'Categories'];
 
     private static $summary_fields = [
-        'Author' => 'Author',
+        'Publisher' => 'Publisher',
         'Text.Summary' => 'Text',
         'Disabled.NiceAsBoolean' => 'Disabled',
     ];
 
     public function fielder(Fielder $fielder): void
     {
-        $fielder->require(['Author', 'Text']);
+        $fielder->require(['Publisher', 'Text']);
 
         $fielder->fields([
             'Root.Main' => [
-                $fielder->string('Author'),
+                $fielder->string('Publisher'),
                 ...$fielder->media('Image'),
                 $fielder->html('Text'),
                 $fielder->tag('Categories'),
