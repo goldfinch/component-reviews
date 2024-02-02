@@ -5,7 +5,7 @@
       <% loop Items %>
         <% if not Disabled %>
           <li data-id="{$URLSegment}">
-            <div><a href="#{$URLSegment}">$Publishier</a></div>
+            <div><a href="#{$URLSegment}">$Publisher</a></div>
             <div>$Text</div>
           </li>
         <% end_if %>
