@@ -24,18 +24,6 @@ class ReviewsSetCommand extends GeneratorCommand
         $command->run($input, $output);
 
         $command = $this->getApplication()->find(
-            'vendor:component-reviews:ext:item',
-        );
-        $input = new ArrayInput(['name' => 'ReviewItem']);
-        $command->run($input, $output);
-
-        $command = $this->getApplication()->find(
-            'vendor:component-reviews:ext:category',
-        );
-        $input = new ArrayInput(['name' => 'ReviewCategory']);
-        $command->run($input, $output);
-
-        $command = $this->getApplication()->find(
             'vendor:component-reviews:ext:config',
         );
         $input = new ArrayInput(['name' => 'ReviewConfig']);
@@ -47,11 +35,25 @@ class ReviewsSetCommand extends GeneratorCommand
         $input = new ArrayInput(['name' => 'ReviewsBlock']);
         $command->run($input, $output);
 
+        $command = $this->getApplication()->find(
+            'vendor:component-reviews:ext:item',
+        );
+        $input = new ArrayInput(['name' => 'ReviewItem']);
+        $command->run($input, $output);
+
+        $command = $this->getApplication()->find(
+            'vendor:component-reviews:ext:category',
+        );
+        $input = new ArrayInput(['name' => 'ReviewCategory']);
+        $command->run($input, $output);
+
         $command = $this->getApplication()->find('vendor:component-reviews:config');
         $input = new ArrayInput(['name' => 'component-reviews']);
         $command->run($input, $output);
 
-        $command = $this->getApplication()->find('vendor:component-reviews:templates');
+        $command = $this->getApplication()->find(
+            'vendor:component-reviews:templates',
+        );
         $input = new ArrayInput([]);
         $command->run($input, $output);
 

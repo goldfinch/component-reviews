@@ -1,0 +1,7 @@
+---
+Name: goldfinch-component-reviews-harvest
+After: "goldfinch/harvest"
+---
+Goldfinch\Harvest\Harvest:
+  harvesters:
+    reviews: Goldfinch\Component\Reviews\Harvest\ReviewsHarvest

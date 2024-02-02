@@ -1,0 +1,9 @@
+---
+Name: goldfinch-component-reviews-mill
+After: "goldfinch/mill"
+---
+Goldfinch\Mill\Mill:
+  millable:
+    Goldfinch\Component\Reviews\Mills\ReviewCategoryMill: Goldfinch\Component\Reviews\Models\ReviewCategory
+    Goldfinch\Component\Reviews\Mills\ReviewItemMill: Goldfinch\Component\Reviews\Models\ReviewItem
+    Goldfinch\Component\Reviews\Mills\ReviewsBlockMill: Goldfinch\Component\Reviews\Blocks\ReviewsBlock

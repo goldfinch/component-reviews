@@ -5,10 +5,15 @@ namespace Goldfinch\Component\Reviews\Models;
 use Goldfinch\Fielder\Fielder;
 use SilverStripe\Assets\Image;
 use SilverStripe\ORM\DataObject;
+use Goldfinch\Mill\Traits\Millable;
+use Goldfinch\Fielder\Traits\FielderTrait;
 use Goldfinch\Component\Reviews\Configs\ReviewConfig;
+use Goldfinch\Component\Reviews\Models\ReviewCategory;
 
 class ReviewItem extends DataObject
 {
+    use FielderTrait, Millable;
+
     private static $table_name = 'ReviewItem';
     private static $singular_name = 'review';
     private static $plural_name = 'reviews';
@@ -19,17 +24,18 @@ class ReviewItem extends DataObject
         'Disabled' => 'Boolean',
     ];
 
+    private static $has_one = [
+        'Image' => Image::class,
+    ];
+
     private static $many_many = [
         'Categories' => ReviewCategory::class,
     ];
+
     private static $many_many_extraFields = [
         'Categories' => [
             'SortExtra' => 'Int',
         ],
-    ];
-
-    private static $has_one = [
-        'Image' => Image::class,
     ];
 
     private static $owns = ['Image', 'Categories'];
@@ -38,7 +44,10 @@ class ReviewItem extends DataObject
         'Publisher' => 'Publisher',
         'Text.Summary' => 'Text',
         'Disabled.NiceAsBoolean' => 'Disabled',
+        'Categories.Count' => 'Categories',
     ];
+
+    private static $urlsegment_source = 'Publisher';
 
     public function fielder(Fielder $fielder): void
     {

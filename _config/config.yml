@@ -4,6 +4,15 @@ Name: goldfinch-component-reviews
 Goldfinch\Component\Reviews\Admin\ReviewsAdmin:
   extensions:
     - Goldfinch\Helpers\Extensions\BlocksAdminExtension
+
+Goldfinch\Component\Reviews\Models\ReviewItem:
+  extensions:
+    - Goldfinch\Helpers\Extensions\DataObjectSluggable
+
+Goldfinch\Component\Reviews\Models\ReviewCategory:
+  extensions:
+    - Goldfinch\Helpers\Extensions\DataObjectSluggable
+
 ---
 Name: goldfinch-component-reviews-icon
 Only:
@@ -12,5 +21,5 @@ Only:
 Goldfinch\Component\Reviews\Admin\ReviewsAdmin:
   menu_icon_class: "bi-chat-square-quote-fill"
 
-Goldfinch\Component\Reviews\Admin\Blocks\ReviewsBlock:
+Goldfinch\Component\Reviews\Blocks\ReviewsBlock:
   icon: "bi-chat-square-quote-fill"

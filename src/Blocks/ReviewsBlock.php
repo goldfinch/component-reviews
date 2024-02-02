@@ -3,6 +3,7 @@
 namespace Goldfinch\Component\Reviews\Blocks;
 
 use Goldfinch\Fielder\Fielder;
+use Goldfinch\Mill\Traits\Millable;
 use Goldfinch\Fielder\Traits\FielderTrait;
 use DNADesign\Elemental\Models\BaseElement;
 use Goldfinch\Component\Reviews\Models\ReviewItem;
@@ -10,10 +11,10 @@ use Goldfinch\Component\Reviews\Models\ReviewCategory;
 
 class ReviewsBlock extends BaseElement
 {
-    use FielderTrait;
+    use FielderTrait, Millable;
 
     private static $table_name = 'ReviewsBlock';
-    private static $singular_name = 'Reviews';
+    private static $singular_name = 'Review';
     private static $plural_name = 'Reviews';
 
     private static $db = [];

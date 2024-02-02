@@ -22,8 +22,10 @@ class ReviewsTemplatesCommand extends GeneratorCommand
 
         if (is_string($theme)) {
 
-            $componentPath = BASE_PATH . '/vendor/goldfinch/component-reviews/templates/Goldfinch/Component/Reviews/';
-            $themePath = 'themes/' . $theme . '/templates/Goldfinch/Component/Reviews/';
+            $componentPathTemplates = BASE_PATH . '/vendor/goldfinch/component-reviews/templates/';
+            $componentPath = $componentPathTemplates . 'Goldfinch/Component/Reviews/';
+            $themeTemplates = 'themes/' . $theme . '/templates/';
+            $themePath = $themeTemplates . 'Goldfinch/Component/Reviews/';
 
             $files = [
                 [
