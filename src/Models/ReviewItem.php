@@ -51,7 +51,7 @@ class ReviewItem extends DataObject
 
     public function fielder(Fielder $fielder): void
     {
-        $fielder->require(['Publisher', 'Text']);
+        $fielder->required(['Publisher', 'Text']);
 
         $fielder->fields([
             'Root.Main' => [

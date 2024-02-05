@@ -30,7 +30,7 @@ class ReviewCategory extends DataObject
 
     public function fielder(Fielder $fielder): void
     {
-        $fielder->require(['Title']);
+        $fielder->required(['Title']);
 
         $fielder->fields([
             'Root.Main' => [$fielder->string('Title')],
