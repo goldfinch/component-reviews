@@ -2,17 +2,12 @@
 
 namespace Goldfinch\Component\Reviews\Blocks;
 
-use Goldfinch\Fielder\Fielder;
-use Goldfinch\Mill\Traits\Millable;
-use Goldfinch\Fielder\Traits\FielderTrait;
-use DNADesign\Elemental\Models\BaseElement;
+use Goldfinch\Blocks\Models\BlockElement;
 use Goldfinch\Component\Reviews\Models\ReviewItem;
 use Goldfinch\Component\Reviews\Models\ReviewCategory;
 
-class ReviewsBlock extends BaseElement
+class ReviewsBlock extends BlockElement
 {
-    use FielderTrait, Millable;
-
     private static $table_name = 'ReviewsBlock';
     private static $singular_name = 'Review';
     private static $plural_name = 'Reviews';
@@ -23,11 +18,6 @@ class ReviewsBlock extends BaseElement
     private static $description = '';
     private static $icon = 'font-icon-chat';
 
-    public function fielder(Fielder $fielder): void
-    {
-        // ..
-    }
-
     public function Items()
     {
         return ReviewItem::get();
@@ -36,17 +26,5 @@ class ReviewsBlock extends BaseElement
     public function Categories()
     {
         return ReviewCategory::get();
-    }
-
-    public function getSummary()
-    {
-        return $this->getDescription();
-    }
-
-    public function getType()
-    {
-        $default = $this->i18n_singular_name() ?: 'Block';
-
-        return _t(__CLASS__ . '.BlockType', $default);
     }
 }
