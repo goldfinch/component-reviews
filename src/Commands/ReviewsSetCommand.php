@@ -17,45 +17,26 @@ class ReviewsSetCommand extends GeneratorCommand
 
     protected function execute($input, $output): int
     {
-        $command = $this->getApplication()->find(
-            'vendor:component-reviews:ext:admin',
-        );
-        $input = new ArrayInput(['name' => 'ReviewsAdmin']);
-        $command->run($input, $output);
+        $command = $this->getApplication()->find('vendor:component-reviews:ext:admin');
+        $command->run(new ArrayInput(['name' => 'ReviewsAdmin']), $output);
 
-        $command = $this->getApplication()->find(
-            'vendor:component-reviews:ext:config',
-        );
-        $input = new ArrayInput(['name' => 'ReviewConfig']);
-        $command->run($input, $output);
+        $command = $this->getApplication()->find('vendor:component-reviews:ext:config');
+        $command->run(new ArrayInput(['name' => 'ReviewConfig']), $output);
 
-        $command = $this->getApplication()->find(
-            'vendor:component-reviews:ext:block',
-        );
-        $input = new ArrayInput(['name' => 'ReviewsBlock']);
-        $command->run($input, $output);
+        $command = $this->getApplication()->find('vendor:component-reviews:ext:block');
+        $command->run(new ArrayInput(['name' => 'ReviewsBlock']), $output);
 
-        $command = $this->getApplication()->find(
-            'vendor:component-reviews:ext:item',
-        );
-        $input = new ArrayInput(['name' => 'ReviewItem']);
-        $command->run($input, $output);
+        $command = $this->getApplication()->find('vendor:component-reviews:ext:item');
+        $command->run(new ArrayInput(['name' => 'ReviewItem']), $output);
 
-        $command = $this->getApplication()->find(
-            'vendor:component-reviews:ext:category',
-        );
-        $input = new ArrayInput(['name' => 'ReviewCategory']);
-        $command->run($input, $output);
+        $command = $this->getApplication()->find('vendor:component-reviews:ext:category');
+        $command->run(new ArrayInput(['name' => 'ReviewCategory']), $output);
 
         $command = $this->getApplication()->find('vendor:component-reviews:config');
-        $input = new ArrayInput(['name' => 'component-reviews']);
-        $command->run($input, $output);
+        $command->run(new ArrayInput(['name' => 'component-reviews']), $output);
 
-        $command = $this->getApplication()->find(
-            'vendor:component-reviews:templates',
-        );
-        $input = new ArrayInput([]);
-        $command->run($input, $output);
+        $command = $this->getApplication()->find('vendor:component-reviews:templates');
+        $command->run(new ArrayInput([]), $output);
 
         return Command::SUCCESS;
     }
