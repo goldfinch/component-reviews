@@ -3,7 +3,6 @@
 namespace Goldfinch\Component\Reviews\Commands;
 
 use Goldfinch\Taz\Console\GeneratorCommand;
-use Symfony\Component\Console\Command\Command;
 
 #[AsCommand(name: 'vendor:component-reviews:ext:category')]
 class ReviewCategoryExtensionCommand extends GeneratorCommand
@@ -19,11 +18,4 @@ class ReviewCategoryExtensionCommand extends GeneratorCommand
     protected $stub = './stubs/reviewcategory-extension.stub';
 
     protected $prefix = 'Extension';
-
-    protected function execute($input, $output): int
-    {
-        parent::execute($input, $output);
-
-        return Command::SUCCESS;
-    }
 }
