@@ -17,5 +17,5 @@ class ReviewsBlockExtensionCommand extends GeneratorCommand
 
     protected $stub = './stubs/reviewsblock-extension.stub';
 
-    protected $prefix = 'Extension';
+    protected $suffix = 'Extension';
 }

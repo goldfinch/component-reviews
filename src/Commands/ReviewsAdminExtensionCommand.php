@@ -17,5 +17,5 @@ class ReviewsAdminExtensionCommand extends GeneratorCommand
 
     protected $stub = './stubs/reviewsadmin-extension.stub';
 
-    protected $prefix = 'Extension';
+    protected $suffix = 'Extension';
 }
