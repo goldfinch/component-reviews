@@ -2,11 +2,11 @@
 
 namespace Goldfinch\Component\Reviews\Blocks;
 
-use Goldfinch\Blocks\Models\BlockElement;
+use DNADesign\Elemental\Models\BaseElement;
 use Goldfinch\Component\Reviews\Models\ReviewItem;
 use Goldfinch\Component\Reviews\Models\ReviewCategory;
 
-class ReviewsBlock extends BlockElement
+class ReviewsBlock extends BaseElement
 {
     private static $table_name = 'ReviewsBlock';
     private static $singular_name = 'Review';
@@ -15,7 +15,7 @@ class ReviewsBlock extends BlockElement
     private static $db = [];
 
     private static $inline_editable = false;
-    private static $description = '';
+    private static $description = 'Reviews block handler';
     private static $icon = 'font-icon-chat';
 
     public function Items()

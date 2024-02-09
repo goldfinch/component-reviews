@@ -5,6 +5,10 @@ Goldfinch\Component\Reviews\Admin\ReviewsAdmin:
   extensions:
     - Goldfinch\Helpers\Extensions\BlocksAdminExtension
 
+Goldfinch\Component\Reviews\Blocks\ReviewsBlock:
+  extensions:
+    - Goldfinch\Helpers\Extensions\BaseElementExtension
+
 Goldfinch\Component\Reviews\Models\ReviewItem:
   extensions:
     - Goldfinch\Helpers\Extensions\DataObjectSluggable
