@@ -3,11 +3,14 @@
 namespace Goldfinch\Component\Reviews\Blocks;
 
 use DNADesign\Elemental\Models\BaseElement;
+use Goldfinch\Helpers\Traits\BaseElementTrait;
 use Goldfinch\Component\Reviews\Models\ReviewItem;
 use Goldfinch\Component\Reviews\Models\ReviewCategory;
 
 class ReviewsBlock extends BaseElement
 {
+    use BaseElementTrait;
+
     private static $table_name = 'ReviewsBlock';
     private static $singular_name = 'Review';
     private static $plural_name = 'Reviews';
