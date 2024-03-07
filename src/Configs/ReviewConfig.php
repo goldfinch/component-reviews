@@ -2,15 +2,13 @@
 
 namespace Goldfinch\Component\Reviews\Configs;
 
-use Goldfinch\Fielder\Fielder;
 use JonoM\SomeConfig\SomeConfig;
 use SilverStripe\ORM\DataObject;
-use Goldfinch\Fielder\Traits\FielderTrait;
 use SilverStripe\View\TemplateGlobalProvider;
 
 class ReviewConfig extends DataObject implements TemplateGlobalProvider
 {
-    use SomeConfig, FielderTrait;
+    use SomeConfig;
 
     private static $table_name = 'ReviewConfig';
 
@@ -18,12 +16,18 @@ class ReviewConfig extends DataObject implements TemplateGlobalProvider
         'DisabledCategories' => 'Boolean',
     ];
 
-    public function fielder(Fielder $fielder): void
+    public function getCMSFields()
     {
+        $fields = parent::getCMSFields();
+
+        $fielder = $fields->fielder($this);
+
         $fielder->fields([
             'Root.Main' => [
                 $fielder->checkbox('DisabledCategories', 'Disabled categories'),
             ],
         ]);
+
+        return $fields;
     }
 }

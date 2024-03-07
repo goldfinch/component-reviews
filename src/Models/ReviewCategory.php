@@ -2,14 +2,12 @@
 
 namespace Goldfinch\Component\Reviews\Models;
 
-use Goldfinch\Fielder\Fielder;
 use SilverStripe\ORM\DataObject;
 use Goldfinch\Mill\Traits\Millable;
-use Goldfinch\Fielder\Traits\FielderTrait;
 
 class ReviewCategory extends DataObject
 {
-    use FielderTrait, Millable;
+    use Millable;
 
     private static $table_name = 'ReviewCategory';
     private static $singular_name = 'category';
@@ -28,12 +26,18 @@ class ReviewCategory extends DataObject
         'Items.Count' => 'Reviews',
     ];
 
-    public function fielder(Fielder $fielder): void
+    public function getCMSFields()
     {
+        $fields = parent::getCMSFields();
+
+        $fielder = $fields->fielder($this);
+
         $fielder->required(['Title']);
 
         $fielder->fields([
             'Root.Main' => [$fielder->string('Title')],
         ]);
+
+        return $fields;
     }
 }

@@ -2,17 +2,15 @@
 
 namespace Goldfinch\Component\Reviews\Models;
 
-use Goldfinch\Fielder\Fielder;
 use SilverStripe\Assets\Image;
 use SilverStripe\ORM\DataObject;
 use Goldfinch\Mill\Traits\Millable;
-use Goldfinch\Fielder\Traits\FielderTrait;
 use Goldfinch\Component\Reviews\Configs\ReviewConfig;
 use Goldfinch\Component\Reviews\Models\ReviewCategory;
 
 class ReviewItem extends DataObject
 {
-    use FielderTrait, Millable;
+    use Millable;
 
     private static $table_name = 'ReviewItem';
     private static $singular_name = 'review';
@@ -49,8 +47,12 @@ class ReviewItem extends DataObject
 
     private static $urlsegment_source = 'Publisher';
 
-    public function fielder(Fielder $fielder): void
+    public function getCMSFields()
     {
+        $fields = parent::getCMSFields();
+
+        $fielder = $fields->fielder($this);
+
         $fielder->required(['Publisher', 'Text']);
 
         $fielder->fields([
@@ -72,5 +74,7 @@ class ReviewItem extends DataObject
         if ($cfg->DisabledCategories) {
             $fielder->remove('Categories');
         }
+
+        return $fields;
     }
 }
