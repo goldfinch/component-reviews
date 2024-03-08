@@ -51,7 +51,7 @@ class ReviewItem extends DataObject
     {
         $fields = parent::getCMSFields();
 
-        $fielder = $fields->fielder($this);
+        $fielder = $this->intFielder($fields)->getFielder();
 
         $fielder->required(['Publisher', 'Text']);
 
