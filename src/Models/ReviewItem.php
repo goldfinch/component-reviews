@@ -75,6 +75,8 @@ class ReviewItem extends DataObject
             $fielder->remove('Categories');
         }
 
+        $this->extend('updateCMSFields', $fields);
+
         return $fields;
     }
 }
